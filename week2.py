@@ -63,16 +63,16 @@ def challengeExercise():
 
     while startNumber < 101:
         step = countStep(startNumber)
-        print(str(startNumber) + " have " + str(step) + " steps")
+        # Question 3
+        if step == startNumber:
+            print(str(startNumber) + " have the same steps as itself")
+        else:
+            print(str(startNumber) + " have " + str(step) + " steps")
 
         # Question 1 & 2
         if maximumStep < step:
             maximumStep = step
             numberWithMaxStep = startNumber
-
-        # Question 3
-        if step == startNumber:
-            print(str(startNumber) + " have the same steps as itself")
 
         startNumber += 1
 
