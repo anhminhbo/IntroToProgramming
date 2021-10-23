@@ -1,2 +1,2 @@
-# ITP-Week1
+# ITP-COSC2439
 Intro to Programming
