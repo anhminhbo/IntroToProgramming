@@ -64,4 +64,3 @@ def checkTriangle():
 # powerOf(i,j)
 
 checkTriangle()
-
