@@ -9,16 +9,19 @@
 import random
 import turtle
 
+
 #
 def question1():
     """prints “We like Python's turtles!” 1000 times """
     for index in range(1000):
         print("We like Python's turtles!")
 
+
 def question2():
     """ prints 10 random numbers between 25 and 35 """
     for index in range(10):
-        print(random.randint(25,35))
+        print(random.randint(25, 35))
+
 
 def question3a():
     """draw An equilateral triangle"""
@@ -34,10 +37,11 @@ def question3a():
     # We have 3 sides so we loop 3 times to draw each side
     for index in range(3):
         brush.forward(100)
-        brush.left(120) # create an angle of 120 degree difference than the horizontal axis
+        brush.left(120)  # create an angle of 120 degree difference than the horizontal axis
 
     # pause the screen until we click
     win.exitonclick()
+
 
 def question3b():
     """draw a square"""
@@ -53,8 +57,7 @@ def question3b():
     # We have 4 sides so we loop 4 times to draw each side
     for index in range(4):
         brush.forward(100)
-        brush.left(90) # create an angle of 90 degree difference than the horizontal axis
-
+        brush.left(90)  # create an angle of 90 degree difference than the horizontal axis
 
     # pause the screen until we click
     win.exitonclick()
@@ -80,6 +83,7 @@ def question3c():
     # pause the screen until we click
     win.exitonclick()
 
+
 def question3d():
     """draw a octagon"""
     # set up a graphic window
@@ -100,6 +104,7 @@ def question3d():
     # pause the screen until we click
     win.exitonclick()
 
+
 # Still thinking about question3e
 def question3e():
     """draw all polygons from 3 to 8 slides"""
@@ -114,7 +119,7 @@ def question3e():
 
     # We have 4 shapes so we loop 3 times to space between each shape
     for index in range(3):
-        #if this is the first index so not spacing
+        # if this is the first index so not spacing
         if index != 0:
             brush.up()
             brush.forward(30)
@@ -123,7 +128,6 @@ def question3e():
             for index in range(4):
                 brush.forward(180)
                 brush.left(120)  # create an angle of 120 degree difference than the horizontal axis
-
 
     # pause the screen until we click
     win.exitonclick()
@@ -153,8 +157,8 @@ def question4():
         brush.right(144)
         brush.forward(100)
 
-
     win.exitonclick()
+
 
 def question5():
     """draw vietnamese flag like this"""
@@ -170,7 +174,7 @@ def question5():
 
     # Center the flag
     brush.up()
-    brush.goto(-72,-144)
+    brush.goto(-72, -144)
     brush.down()
 
     # fill the flag
@@ -181,7 +185,7 @@ def question5():
     brush.left(36)
     brush.forward(100)
 
-    #Loop to draw other line with same patterns
+    # Loop to draw other line with same patterns
     for index in range(5):
         brush.right(72)
         brush.forward(200)
@@ -199,10 +203,9 @@ def question6():
     # set up a graphic window
     win = turtle.Screen()
     win.setup(500, 500)
-
     win.bgcolor("purple")
-    # create object brush from Turtle and add some properties
 
+    # create object brush from Turtle and add some properties
     brush = turtle.Turtle()
     brush.color("green")
     brush.pensize(5)
@@ -210,9 +213,10 @@ def question6():
 
     # Clock have 12 hours --> each angle is 30 degree --> loop 12 times to draw each piece of the clock
     for index in range(12):
+        # Set the vector 30degree to the left of the original vector
         brush.left(30)
 
-        # move the brush to 140px to the left with 30 degree without trait
+        # move the brush 140px without trait
         brush.up()
         brush.forward(140)
 
@@ -226,9 +230,10 @@ def question6():
         brush.stamp()
 
         # reset the position of the brush to its original position
-        brush.goto(0,0)
+        brush.goto(0, 0)
 
     win.exitonclick()
+
 
 # question1()
 
@@ -249,4 +254,3 @@ def question6():
 # question5()
 
 question6()
-
