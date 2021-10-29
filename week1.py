@@ -26,7 +26,7 @@
 def checkTriangle():
     # Try ... except to catch error
     try:
-        x = int(input("input first side "))
+        x = int(input("input first side " ))
         y = int(input("input second side "))
         z = int(input("input third side "))
         # Check if Triangle is valid
