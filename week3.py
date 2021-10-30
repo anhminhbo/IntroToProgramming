@@ -231,6 +231,7 @@ def question6():
 
         # reset the position of the brush to its original position
         brush.goto(0, 0)
+        brush.down()
 
     win.exitonclick()
 
