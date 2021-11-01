@@ -47,6 +47,8 @@ def areaOfRect():
 
 
 def question4():
+    daysInAWeek = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
     # Ask the user to enter the starting Day and the length of stay
     startingDay = int(input("input your starting Day "))
     lengthOfStay = int(input("input your length of staying "))
@@ -64,7 +66,7 @@ def question4():
             returnDay -= 7
 
         # Print out the return Day of the user
-        print("you will return on Day", returnDay)
+        print("you will return on", daysInAWeek[returnDay])
 
 
 def question5():
@@ -126,9 +128,9 @@ def countStep(number):
 # oneB()
 # areaOfCircle()
 # areaOfRect()
-# question4()
+question4()
 # question5()
-challengeExercise()
+# challengeExercise()
 
 # Question 4 , 5 still thinking
 # Question 5 stop at number = 5 because it make the countStep function into infinite loop
