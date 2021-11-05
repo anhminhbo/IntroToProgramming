@@ -10,11 +10,39 @@ import random
 import turtle
 
 
-#
+def main():
+    """
+    To run all question answers, uncomment to run any questions
+    :return: none
+    """
+
+    # question1()
+
+    # question2()
+
+    # question3a()
+
+    # question3b()
+
+    # question3c()
+
+    # question3d()
+
+    question3e()
+
+    # question4()
+
+    # question5()
+
+    # question6()
+
+#---------------------------------
 def question1():
-    """prints “We like Python's turtles!” 1000 times """
-    for index in range(1000):
-        print("We like Python's turtles!")
+    """prints “We like Python's turtles!” 10 times """
+    # for index in range(10):
+    #     print("We like Python's turtles!")
+
+    print("We like Python's turtles!\n" * 10)
 
 
 def question2():
@@ -36,8 +64,11 @@ def question3a():
 
     # We have 3 sides so we loop 3 times to draw each side
     for index in range(3):
-        brush.forward(100)
+        brush.forward(300)
         brush.left(120)  # create an angle of 120 degree difference than the horizontal axis
+
+    #remove the shape from brush at the end
+    brush.hideturtle()
 
     # pause the screen until we click
     win.exitonclick()
@@ -56,8 +87,11 @@ def question3b():
 
     # We have 4 sides so we loop 4 times to draw each side
     for index in range(4):
-        brush.forward(100)
+        brush.forward(300)
         brush.left(90)  # create an angle of 90 degree difference than the horizontal axis
+
+    #remove the shape from brush at the end
+    brush.hideturtle()
 
     # pause the screen until we click
     win.exitonclick()
@@ -80,6 +114,9 @@ def question3c():
         brush.left(60)  # create an angle of 60 degree difference than the horizontal axis
         brush.forward(100)
 
+    #remove the shape from brush at the end
+    brush.hideturtle()
+
     # pause the screen until we click
     win.exitonclick()
 
@@ -101,13 +138,16 @@ def question3d():
         brush.left(45)  # create an angle of 45 degree difference than the horizontal axis
         brush.forward(100)
 
+    #remove the shape from brush at the end
+    brush.hideturtle()
+
     # pause the screen until we click
     win.exitonclick()
 
-
-# Still thinking about question3e
 def question3e():
     """draw all polygons from 3 to 8 slides"""
+    #Initialize color list for each shape
+    colorList = ["red", "blue", "black", "green","yellow", "pink"]
     # set up a graphic window
     win = turtle.Screen()
 
@@ -117,45 +157,69 @@ def question3e():
     brush.pensize(10)
     brush.shape("circle")
 
-    # We have 4 shapes so we loop 3 times to space between each shape
-    for index in range(3):
-        # if this is the first index so not spacing
-        if index != 0:
-            brush.up()
-            brush.forward(30)
-            brush.down()
-            # We have to draw 4 shapes so we have to loop 4 times
-            for index in range(4):
-                brush.forward(180)
-                brush.left(120)  # create an angle of 120 degree difference than the horizontal axis
+    #Move to different location for beauty
+    brush.up()
+    brush.goto(-100,-200)
+    brush.down()
+
+    # We have n sides so loop n times
+    for index in range(6):
+        brush.color(colorList[index])
+        drawPolygon(brush,index + 3)
+
+
+    #remove the shape from brush at the end
+    brush.hideturtle()
 
     # pause the screen until we click
     win.exitonclick()
 
+def drawPolygon(brush,side):
+    """
+
+    :param side: numbers of sides of the polygon
+    :param brush: the brush used to draw
+
+    :return: none
+    """
+    for index in range(side):
+        brush.forward(200)
+        brush.left(360/side)
 
 def question4():
     """draw a star shape like this"""
     # set up a graphic window
     win = turtle.Screen()
-
+    win.bgcolor("red")
     # create object brush from Turtle and add some properties
 
     brush = turtle.Turtle()
-    brush.color("green")
     brush.pensize(10)
     brush.shape("circle")
+
+    brush.color("yellow")
+
+    #Move to different location for beauty
+    brush.up()
+    brush.goto(-100,-100)
+    brush.down()
 
     # We divide the shape into 5 lines --> 1 line with different pattern
     # so we loop 4 times to draw 4 lines with same patterns
 
+    brush.begin_fill()
     # Draw the initial line
     brush.left(72)
-    brush.forward(100)
+    brush.forward(300)
 
     # Draw the other lines that have same patterns
     for index in range(4):
         brush.right(144)
-        brush.forward(100)
+        brush.forward(300)
+
+    brush.end_fill()
+
+    brush.hideturtle()
 
     win.exitonclick()
 
@@ -235,23 +299,5 @@ def question6():
 
     win.exitonclick()
 
+main()
 
-# question1()
-
-# question2()
-
-# question3a()
-
-# question3b()
-
-# question3c()
-
-# question3d()
-
-# question3e() not yet done
-
-# question4()
-
-# question5()
-
-question6()
