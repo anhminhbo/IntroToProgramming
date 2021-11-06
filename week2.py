@@ -62,8 +62,8 @@ def question4():
         returnDay = startingDay + lengthOfStay
 
         # Handle the case when the returnDay is out of range from 0 to 6
-        while returnDay > 6:
-            returnDay -= 7
+        if returnDay > 6:
+            returnDay %= 7
 
         # Print out the return Day of the user
         print("you will return on", daysInAWeek[returnDay])
