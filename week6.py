@@ -4,13 +4,13 @@ def main():
     :return: none
     """
 
-    # format_float_2decimals(harmonic(3))
+    # question1()
 
-    # print_triangular_numbers(5)
+    # question2()
 
-    # print(calculate_dots_in_CenteredPentagon(4))
+    # question3()
 
-    print(max_collatz(85))
+    homework()
 #------------Question 1
 def harmonic(n):
     """
@@ -30,6 +30,18 @@ def format_float_2decimals(floatNumber):
     :return: none
     """
     float_formatter_2decimals = "{:.2f}"
+    print(f'{float_formatter_2decimals.format(harmonic(floatNumber))}')
+
+def question1():
+    """
+    Test cases for question 1
+    :return: none
+    """
+    testCases = [3,1,5]
+    for testCase in testCases:
+        print("for testcase:",testCase,"the result is")
+        format_float_2decimals(testCase)
+        print("----------")
 
 
 # --------------------Question 2
@@ -53,6 +65,17 @@ def calculate_triangular_number(number):
     else:
         return number + calculate_triangular_number(number-1)
 
+def question2():
+    """
+    test cases for question 2
+    :return:
+    """
+    testCases = [5,7,3]
+    for testCase in testCases:
+        print("for testcase:",testCase,"the result is")
+        print_triangular_numbers(testCase)
+        print("----------")
+
 #---------Question3
 def calculate_dots_in_CenteredPentagon(n):
     """
@@ -69,6 +92,18 @@ def calculate_dots_in_CenteredPentagon(n):
         return 1
     else:
         return 5*(n-1) + calculate_dots_in_CenteredPentagon(n-1)
+
+def question3():
+    """
+    test case for question 3
+    :return:
+    """
+    testCases = [5,3,8]
+    for testCase in testCases:
+        print("for testcase:",testCase,"the result is")
+        print(calculate_dots_in_CenteredPentagon(testCase))
+        print("----------")
+
 
 
 # --------------Homework
@@ -97,6 +132,18 @@ def max_collatz(n):
             return maximumOf(n,max_collatz(n//2))
         else:
             return maximumOf(n,max_collatz(3*n + 1))
+
+def homework():
+    """
+    test case for homework
+    :return:
+    """
+    testCases = [10,32,85]
+    for testCase in testCases:
+        print("for testcase:",testCase,"the result is")
+        print(max_collatz(testCase))
+        print("----------")
+
 
 main()
 
