@@ -23,9 +23,9 @@ def estimate_pi(N):
 
     numbers_of_points_inside_circle = count_point_inside_circle(list_of_random_point)
 
-    result = 4 * numbers_of_points_inside_circle/ N
+    estimated_pi = 4 * numbers_of_points_inside_circle/ N
 
-    return result
+    return estimated_pi
 
 
 def generate_n_random_point(N):

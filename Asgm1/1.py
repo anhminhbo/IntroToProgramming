@@ -27,7 +27,9 @@ def find_split_80(integer_list):
     integer_list.sort()
     print(integer_list)
 
-    return integer_list[16]
+    split_80 = integer_list[16]
+
+    return split_80
 
 def generateRandomList(n):
     """
