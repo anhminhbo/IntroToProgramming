@@ -9,7 +9,7 @@
 import math
 
 def main():
-   total_flour_in_kg,decision,total_cost = flour_order(10,14,10,10)
+   total_flour_in_kg,decision,total_cost = flour_order(10,30,10,50)
    print(total_flour_in_kg)
    print(decision)
    print(total_cost)
@@ -48,13 +48,14 @@ def total_amount_of_flour_in_kg(large_thick, large_thin, medium_thick, medium_th
     # Total of flour in kg
     total_flour_in_kg = (large_thick * 550 + large_thin * 500 +  medium_thick * 450 + medium_thin * 400)/1000
 
-    # 6% wasted to make pizza
-    total_flour_in_kg_with_waste = total_flour_in_kg + 0.06*total_flour_in_kg
+    # 6% wasted has included in the given table so this line of code is not valid anymore
+    # # 6% wasted to make pizza
+    # total_flour_in_kg_with_waste = total_flour_in_kg + 0.06*total_flour_in_kg
 
-    print(total_flour_in_kg_with_waste)
+    print(total_flour_in_kg)
 
     # Round up to 2kg per order
-    actual_total_flour_in_kg= round_up_to_2(total_flour_in_kg_with_waste)
+    actual_total_flour_in_kg= round_up_to_2(total_flour_in_kg)
 
     print(actual_total_flour_in_kg)
 
