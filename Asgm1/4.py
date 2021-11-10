@@ -80,7 +80,7 @@ def setup_screen():
 def setup_pen():
     """
     Set up and return the pen to draw
-    :return:
+    :return: pen of Turtle
     """
     pen = turtle.Turtle()
     pen.pensize("0")
@@ -137,6 +137,9 @@ def draw_bar(pen,type_of_pizza,color):
     :param color: color for each pizza bar
     :return: tuple
     """
+    # Initialize resetPosition
+    resetPosition = ()
+
     # Begin fill with the input color
     pen.begin_fill()
     pen.color(color)
@@ -163,7 +166,6 @@ def draw_bar(pen,type_of_pizza,color):
 def calculate_total_pizzas(large_thick, large_thin, medium_thick, medium_thin):
     """
     Calculate and return the total of pizzas
-    :param record_date: date to show on x-axis
     :param large_thick: quantity of this kind of pizza
     :param large_thin: quantity of this kind of pizza
     :param medium_thick: quantity of this kind of pizza

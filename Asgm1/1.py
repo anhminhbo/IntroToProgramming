@@ -9,7 +9,7 @@
 import random
 
 def main():
-    integer_list = generateRandomList(20)
+    integer_list = generate_random_list(20)
     print(integer_list)
     print(find_split_80(integer_list))
 
@@ -31,7 +31,7 @@ def find_split_80(integer_list):
 
     return split_80
 
-def generateRandomList(n):
+def generate_random_list(n):
     """
     generate random list for test cases
     :param n: length of the list
