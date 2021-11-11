@@ -1,0 +1,9 @@
+# RMIT University Vietnam
+# Author: Minh Nguyen
+# Created date: Today
+
+# This is a very short program
+
+for i in range(100):
+    print("Hello World!, Minh")
+
