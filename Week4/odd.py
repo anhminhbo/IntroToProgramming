@@ -1,5 +1,6 @@
 #Import function is_even from even.py
-from even import *
+import even
+from even  import *
 
 def is_odd(n):
     """
@@ -14,10 +15,16 @@ def is_odd(n):
         #     return True
         # else:
         #     return False
-        if is_even(n):
-            return False
-        else:
-            return True
+
+        # if is_even(n):
+        #     return False
+        # else:
+        #     return True
+        #
+        # return not is_even(n)
+        # return not even.is_even()
+
+        return bool(n%2)
 
     except Exception as e:
        print(f'There is an error: {e}')

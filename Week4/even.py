@@ -7,9 +7,6 @@ def is_even(n):
     try:
         if n <= 0:
             raise ValueError('input number should not be less than or equal 0')
-        if n % 2 == 0:
-            return True
-        else:
-            return False
+        return n % 2 == 0
     except Exception as e:
        print(f'There is an error: {e}')

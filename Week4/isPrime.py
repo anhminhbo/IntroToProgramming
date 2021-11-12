@@ -6,27 +6,22 @@ def main():
     try:
         inputNumber = int(input("input your number: "))
 
-        if inputNumber <= 0:
-            raise TypeError("input number should not be less than or equal 0")
-
-        print("the prime number less than",inputNumber,"is:")
+        print("the prime numberd less than",inputNumber,"is/are:")
         # loop from 0 to inputNumber to find all the prime number
         for number in range(inputNumber):
-            if is_Prime(number):
+            if is_prime(number):
                 print(number)
-            else:
-                continue
     except Exception as e:
         print(f'There is an error: {e}')
 
-def is_Prime(number):
+def is_prime(number):
     """
     Check if the number is Prime or not
     :param number: number to be checked
     :return: boolean
     """
-    # Handle special case when number = 0 or number = 1
-    if number == 0 or number == 1:
+    # Handle special case when number <= 1
+    if number <= 1:
         return False
     # Handle special case when number = 2
     if number == 2:
@@ -37,8 +32,6 @@ def is_Prime(number):
     for i in range(2,number):
         if number % i == 0:
             return False
-        else:
-            continue
 
     return True
 

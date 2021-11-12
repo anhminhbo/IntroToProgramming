@@ -39,7 +39,7 @@ def print_Pattern_based_on(n):
     #
 
     #Second approach
-    # Go backward to set indexRow from 5 to 1
+    # Go backward to set indexRow from n to 1
     for indexRow in range(n,0,-1):
         #for first row print indexRow elements
         for indexColumn in range(1, indexRow + 1):
