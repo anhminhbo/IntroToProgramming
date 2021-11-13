@@ -16,7 +16,7 @@ def main():
 
     # print(filter_word_list(["joined):"]))
 
-    # print(delete_astrophe_at_the_end("word's'"))
+    # print(delete_apostrophe_at_the_end("word's'"))
 
     question_2()
 
@@ -93,8 +93,8 @@ def filter_word_list(word_list):
         # Case apostrophe or hyphen between
         elif is_hyphen_between(word) or is_apostrophe_between(word):
             delete_stop = delete_stop_word(word)
-            # print(delete_astrophe_at_the_end(delete_stop))
-            filtered_word_list.append(delete_astrophe_at_the_end(delete_stop))
+            # print(delete_apostrophe_at_the_end(delete_stop))
+            filtered_word_list.append(delete_apostrophe_at_the_end(delete_stop))
         # Other case: for example: "axe."; "'bat"
         else:
             if len(filter_word(word)) > 0:
@@ -144,13 +144,13 @@ def is_double_hyphen_consecutively(word):
     return False
 
 def count_word_freq(word_list):
-    dict = {}
+    word_list_dict = {}
     for word in word_list:
-        if word in dict:
-            dict[word] += 1
+        if word in word_list_dict:
+            word_list_dict[word] += 1
         else:
-            dict[word] = 1
-    return dict
+            word_list_dict[word] = 1
+    return word_list_dict
 
 def delete_stop_word(word):
     new_word = ""
@@ -160,16 +160,16 @@ def delete_stop_word(word):
         new_word += char
     return new_word
 
-def delete_astrophe_at_the_end(word):
+def delete_apostrophe_at_the_end(word):
         if word[len(word)-1] == "'":
             word = word[:len(word)  - 1]
         return word
 
 
-def find_longest_word_in_dict(dict):
+def find_longest_word_in_dict(word_dict):
     maximum_length = 0
     longest_word = ""
-    for word in dict:
+    for word in word_dict:
         if maximum_length < len(word):
             maximum_length = len(word)
             longest_word = word
