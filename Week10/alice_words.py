@@ -29,17 +29,15 @@ def question_2():
 
     ordered_word_freq = OrderedDict(word_freq_dict)
 
-    print(sorted(ordered_word_freq.items()))
-
     for key in sorted(ordered_word_freq):
         ordered_word_freq.move_to_end(key)
 
-    print(ordered_word_freq)
+    # print(ordered_word_freq)
 
     write_to_file(ordered_word_freq)
 
     # How many times does the word Alice occur in the book?
-    print("The word Alice appear in the text for", ordered_word_freq.get("alice"))
+    print("The word Alice appear in the text for", ordered_word_freq.get("alice"),"times")
 
     # What is the longest word in the book?
     print("the longest word is",find_longest_word_in_dict(ordered_word_freq))
@@ -166,12 +164,12 @@ def delete_astrophe_at_the_end(word):
         if word[len(word)-1] == "'":
             word = word[:len(word)  - 1]
         return word
-# def word_frequency(word_list):
+
 
 def find_longest_word_in_dict(dict):
     maximum_length = 0
     longest_word = ""
-    for word, count in dict.items():
+    for word in dict:
         if maximum_length < len(word):
             maximum_length = len(word)
             longest_word = word
