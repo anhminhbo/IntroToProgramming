@@ -1,8 +1,7 @@
 def main():
-    # # Question 1
-    # print(question_1())
+    # Question 1
+    print(question_1())
 
-    # Question 2
 
 
 #--------------------Question 1
