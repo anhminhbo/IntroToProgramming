@@ -68,7 +68,7 @@ def total_money_to_buy_from_A(actual_flour_total_in_kg):
     :return: integer
     """
     # Total money = total kg * 30000 - total kg * 30000 VND * discount, convert float to integer
-    money_to_buy_from_A = int(+ actual_flour_total_in_kg - actual_flour_total_in_kg * discount_from_A(actual_flour_total_in_kg)) * 30000
+    money_to_buy_from_A = int(actual_flour_total_in_kg - actual_flour_total_in_kg * discount_from_A(actual_flour_total_in_kg)) * 30000
     return money_to_buy_from_A
 
 def discount_from_A(actual_flour_total_in_kg):
