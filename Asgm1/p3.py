@@ -4,7 +4,7 @@
 # Assignment: 1
 # Author: Nguyen Cuong Anh Minh (s3931605)
 # Created date: 09/11/2021 18:35
-# Last modified date: 09/11/2021 23:14
+# Last modified date: 16/11/2021 18:56
 
 import math
 
@@ -48,14 +48,14 @@ def total_amount_of_flour_in_kg(large_thick, large_thin, medium_thick, medium_th
     # Total of flour in kg
     total_flour_in_kg = (large_thick * 550 + large_thin * 500 +  medium_thick * 450 + medium_thin * 400)/1000
 
-    # 6% wasted has included in the given table so this line of code is not valid anymore
-    # # 6% wasted to make pizza
-    # total_flour_in_kg_with_waste = total_flour_in_kg + 0.06*total_flour_in_kg
+
+    # 6% wasted to make pizza
+    total_flour_in_kg_with_waste = total_flour_in_kg + 0.06*total_flour_in_kg
 
     print(total_flour_in_kg)
 
     # Round up to 2kg per order
-    actual_total_flour_in_kg= round_up_to_2(total_flour_in_kg)
+    actual_total_flour_in_kg= round_up_to_2(total_flour_in_kg_with_waste)
 
     print(actual_total_flour_in_kg)
 
@@ -67,8 +67,8 @@ def total_money_to_buy_from_A(actual_flour_total_in_kg):
     :param actual_flour_total_in_kg: total amount of flour in kg
     :return: integer
     """
-    # Total money = total kg * 30000 VND * discount, convert float to integer
-    money_to_buy_from_A = int(actual_flour_total_in_kg * 30000 * discount_from_A(actual_flour_total_in_kg))
+    # Total money = total kg * 30000 - total kg * 30000 VND * discount, convert float to integer
+    money_to_buy_from_A = int(+ actual_flour_total_in_kg - actual_flour_total_in_kg * discount_from_A(actual_flour_total_in_kg)) * 30000
     return money_to_buy_from_A
 
 def discount_from_A(actual_flour_total_in_kg):
@@ -89,8 +89,8 @@ def total_money_to_buy_from_B(actual_flour_total_in_kg):
     :param actual_flour_total_in_kg: total amount of flour in kg
     :return: integer
     """
-    # Total money = total kg * 31000 VND * discount, convert float to integer
-    money_to_buy_from_B = int(actual_flour_total_in_kg * 31000 * discount_from_B(actual_flour_total_in_kg))
+    # Total money =total kg * 31000VND -total kg * 31000 VND * discount, convert float to integer
+    money_to_buy_from_B = int(actual_flour_total_in_kg - actual_flour_total_in_kg * discount_from_B(actual_flour_total_in_kg))  * 31000
     return money_to_buy_from_B
 
 def discount_from_B(actual_flour_total_in_kg):

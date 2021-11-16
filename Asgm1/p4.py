@@ -12,7 +12,7 @@ import turtle
 def main():
     # total_flour_in_kg,decision,total_cost = exercise3.flour_order(10,5,5,10)
 
-    draw_bar_chart("21/10/2021",10,5,5,10)
+    draw_bar_chart("01/01/2021",10,5,5,10)
 
 
 
