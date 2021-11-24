@@ -7,12 +7,12 @@
 # Last modified date: 09/11/2021 23:32
 
 import turtle
-# exercise3 = __import__('3')
-
-def main():
-    # total_flour_in_kg,decision,total_cost = exercise3.flour_order(10,5,5,10)
-
-    draw_bar_chart("01/01/2021",10,5,5,10)
+# # exercise3 = __import__('3')
+#
+# def main():
+#     # total_flour_in_kg,decision,total_cost = exercise3.flour_order(10,5,5,10)
+#
+#     draw_bar_chart("01/01/2021",4,0,0,10)
 
 
 
@@ -26,13 +26,13 @@ def draw_bar_chart(record_date, large_thick, large_thin, medium_thick, medium_th
     :param medium_thin: quantity of this kind of pizza
     :return: none
     """
-    # Create a list content types of pizza
+    # Create a list content type of pizza
     type_of_pizza = [large_thick,large_thin,medium_thick,medium_thin]
 
     # Calculate total pizzas
     total_pizzas = calculate_total_pizzas(large_thick, large_thin, medium_thick, medium_thin)
 
-    # Create a color list for bar char
+    # Create a color list for each bar
     color_list = ["red","pink","green","blue"]
 
     # Set up screen
@@ -93,16 +93,16 @@ def setup_pen():
 
     return pen
 
-def draw_x_y_axis(pen,total_pizzas):
+def draw_x_y_axis(pen,total_pizza_s):
     """
     Draw the x and y axis
     :param pen: pen Turtle to draw
-    :param total_pizzas: total of pizzas
+    :param total_pizza_s: total of pizzas
     :return: none
     """
     # Draw the y-axis
     pen.setheading(90)
-    pen.forward(total_pizzas*10 + 20)
+    pen.forward(total_pizza_s*10 + 20)
     pen.stamp() # Stamp to create the shape of the pen
 
     # Reset position to draw next thing
@@ -114,11 +114,11 @@ def draw_x_y_axis(pen,total_pizzas):
     pen.stamp()# Stamp to create the shape of the pen
 
 
-def draw_date(pen,record_date):
+def draw_date(pen,date):
     """
     Draw the date below the bar
     :param pen: pen Turtle to draw
-    :param record_date: the input date to draw below the bar
+    :param date: the input date to draw below the bar
     :return: none
     """
     # Set up the position to draw
@@ -127,32 +127,32 @@ def draw_date(pen,record_date):
     pen.down()
 
     # pen.write() to write the date with given font
-    pen.write(record_date, font=("Arial", 16,"normal"))
+    pen.write(date, font=("Arial", 16,"normal"))
 
-def draw_bar(pen,type_of_pizza,color):
+def draw_bar(pen,pizza_type,color_type):
     """
     Draw bar for each pizza
     :param pen: pen Turtle to draw
-    :param type_of_pizza: pizza type
-    :param color: color for each pizza bar
+    :param pizza_type: pizza type
+    :param color_type: color for each pizza bar
     :return: tuple
     """
-    # Initialize resetPosition
-    resetPosition = ()
+    # Initialize draw position for each bar
+    draw_position = ()
 
     # Begin fill with the input color
     pen.begin_fill()
-    pen.color(color)
+    pen.color(color_type)
 
     # Divide the rectangle bar into 2 sides with same pattern => loop 2 times to draw each side
     for index in range(2):
         # draw the height of bar
         pen.right(90)
-        pen.forward(type_of_pizza*10)
+        pen.forward(pizza_type*10)
 
         # Handle this to output the reset position to draw next pizza bar
         if index == 0:
-            resetPosition = pen.position()
+            draw_position = pen.position()
 
         # draw the width of bar
         pen.right(90)
@@ -161,48 +161,48 @@ def draw_bar(pen,type_of_pizza,color):
     # End fill to fill the given color for the bar shape
     pen.end_fill()
 
-    return resetPosition
+    return draw_position
 
-def calculate_total_pizzas(large_thick, large_thin, medium_thick, medium_thin):
+def calculate_total_pizzas(large_thick_quantity, large_thin_quantity, medium_thick_quantity, medium_thin_quantity):
     """
     Calculate and return the total of pizzas
-    :param large_thick: quantity of this kind of pizza
-    :param large_thin: quantity of this kind of pizza
-    :param medium_thick: quantity of this kind of pizza
-    :param medium_thin: quantity of this kind of pizza
+    :param large_thick_quantity: quantity of this kind of pizza
+    :param large_thin_quantity: quantity of this kind of pizza
+    :param medium_thick_quantity: quantity of this kind of pizza
+    :param medium_thin_quantity: quantity of this kind of pizza
     :return: integer
     """
-    return large_thick + large_thin + medium_thick + medium_thin
+    return large_thick_quantity + large_thin_quantity + medium_thick_quantity + medium_thin_quantity
 
-def draw_total_pizzas(pen,total_pizzas):
+def draw_total_pizzas(pen,total):
     """
     Draw total pizzas above the bar graph
     :param pen: pen Turtle to draw
-    :param total_pizzas: total of pizzas
+    :param total: total of pizzas
     :return: none
     """
     # Change color to write
     pen.color("black")
 
     # Write the given pizzas with font because total_pizzas is int ==> convert to str
-    pen.write(str(total_pizzas), font=("Arial", 16,"normal"))
+    pen.write(str(total), font=("Arial", 16,"normal"))
 
     # Hide the turtle for beauty
     pen.hideturtle()
 
 
-def reset_position(pen,resetPosition):
+def reset_position(pen,position):
     """
     Set the pen to go to reset Position to begin draw
     :param pen: pen of Turtle to draw
-    :param resetPosition: the position for each repetitive drawing
+    :param position: the position for each repetitive drawing
     :return: none
     """
     pen.up()
-    pen.goto(resetPosition[0], resetPosition[1])
+    pen.goto(position[0], position[1])
     pen.down()
 
-main()
+# main()
 
 
 

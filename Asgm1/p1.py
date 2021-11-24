@@ -6,12 +6,12 @@
 # Created date: 09/11/2021 17:30
 # Last modified date: 09/11/2021 18:03
 
-import random
+# import random
 
-def main():
-    integer_list = generate_random_list(20)
-    print(integer_list)
-    print(find_split_80(integer_list))
+# def main():
+#     integer_list = generate_random_list(20)
+#     print(integer_list)
+#     print(find_split_80(integer_list))
 
 # For Question 1: find a number in list of 20 numbers where exactly 80% of numbers in lists
 # are equal to or smaller than it ==> 80% of the list is 0.8 * 20 = 16
@@ -31,15 +31,15 @@ def find_split_80(integer_list):
 
     return split_80
 
-def generate_random_list(n):
-    """
-    generate random list for test cases
-    :param n: length of the list
-    :return:
-    """
-    integer_list = []
-    for index in range(n):
-       integer_list.append(random.randint(0,100))
-    return integer_list
-
-main()
+# def generate_random_list(n):
+#     """
+#     generate random list for test cases
+#     :param n: length of the list
+#     :return:
+#     """
+#     integer_list = []
+#     for index in range(n):
+#        integer_list.append(random.randint(0,100))
+#     return integer_list
+#
+# main()
