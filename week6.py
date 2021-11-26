@@ -18,10 +18,19 @@ def harmonic(n):
     :param n: precison parameter to calculate value of harmonic series
     :return: float
     """
+    # f(n) = 1 + 1/2 + 1/3 +...+ 1/(n-1) + 1/n
+    # f(n-1) = 1 + 1/2 + 1/3 +...+ 1/(n-1)
+    # => f(n) = 1/n + f(n-1)
     if n==1:
         return float(1)
     else:
         return 1/n + harmonic(n-1)
+
+    # Iteration
+    # sum = 0
+    # for number in range(1,n+1):
+    #     sum += 1/number
+    # return sum
 
 def format_float_2decimals(floatNumber):
     """
@@ -64,7 +73,10 @@ def calculate_triangular_number(number):
         return 1
     else:
         return number + calculate_triangular_number(number-1)
-
+    # sum = 0
+    # for number in range(1,n+1):
+    #     sum += number
+    # return sum
 def question2():
     """
     test cases for question 2
@@ -85,6 +97,14 @@ def calculate_dots_in_CenteredPentagon(n):
     """
     # For nth(n>=1) centered pentagon numbers, we have formula: f(n) = (5n^2 - 5n +2)/2
     # I find recursive formula by taking f(n) - f(n-1) = 5n -5 => f(n) = 5(n - 1) + f(n-1)
+
+    # 2nd approach: S(1) = 1 + 0
+    # S(2) = S(1) + 5 = 6
+    # S(3) = S(2) + 10 = 16
+    # S(4) = S(3) + 15 = 31
+    # S(n) = S(n-1) + 5(n-1) n starts from 0 to n
+    # Base is S(1) = 1
+
 
     # Find out that n2 = n1 + 5(n-1) with n = 2
     # n3 = n2 + 5(n-1) with n = 3
@@ -147,3 +167,4 @@ def homework():
 
 main()
 
+# Notes: to do recursive function -> find base and relationship between f(n) and f(n-1)
