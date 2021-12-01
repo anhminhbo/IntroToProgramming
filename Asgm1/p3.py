@@ -6,13 +6,13 @@
 # Created date: 09/11/2021 18:35
 # Last modified date: 16/11/2021 18:56
 
-import math
+# import math
 
-# def main():
-#    total_flour_in_kg,decision,total_cost = flour_order(100,30,10,100)
-#    print(total_flour_in_kg)
-#    print(decision)
-#    print(total_cost)
+def main():
+   total_flour_in_kg,decision,total_cost = flour_order(1,1,1,10)
+   print(total_flour_in_kg)
+   print(decision)
+   print(total_cost)
 
 
 def flour_order(large_thick, large_thin, medium_thick, medium_thin):
@@ -53,7 +53,7 @@ def total_amount_of_flour_in_kg(large_thick_quantity, large_thin_quantity, mediu
     total_flour_in_kg_with_waste = total_flour_in_kg + 0.06*total_flour_in_kg
 
     # Round up to 2kg per order
-    actual_total_flour_in_kg= round_up_to_2(total_flour_in_kg_with_waste)
+    actual_total_flour_in_kg= round_up_to_n(total_flour_in_kg_with_waste,2)
 
 
     return actual_total_flour_in_kg
@@ -61,7 +61,7 @@ def total_amount_of_flour_in_kg(large_thick_quantity, large_thin_quantity, mediu
 def total_money_to_buy_from_A(flour_total_a):
     """
     Return the money if I buy from A
-    :param flour_total_a: total amount of flour in kg
+    :param flour_total_a: total amount of flour in kgr
     :return: integer
     """
     # Total money = total kg * 30000 - total kg * 30000 VND * discount, convert float to integer
@@ -104,20 +104,31 @@ def discount_from_B(flour_total_discount_b):
     else:
         return 0.1
 
-def round_up_to_2(flour_ord):
+def round_up_to_n(flour_ord,n):
     """
-    Return the rounded to 2kg for order amount
+    Return the rounded to n kg for order amount
     :param flour_ord: total amount of flour in kg
+    :param n: kg to round up to
     :return: integer
     """
-    # Use math.ceil() to round up
-    # For example: 0.1 % 2 = 0,1 => roundUp(0.1 + 1) => 2kg
-    # 1.1 % 2 = 1.1 ==> roundUp(1.1) => 2kg
-    if flour_ord % 2 > 1:
-        flour_formatted = math.ceil(flour_ord)
-    else:
-        flour_formatted = math.ceil(flour_ord + 1)
-    return flour_formatted
+    # # Use math.ceil() to round up
+    # # For example: 0.1 % 2 = 0,1 => roundUp(0.1 + 1) => 2kg
+    # # 1.1 % 2 = 1.1 ==> roundUp(1.1) => 2kg
+    # if flour_ord % 2 > 1:
+    #     flour_formatted = math.ceil(flour_ord)
+    # else:
+    #     flour_formatted = math.ceil(flour_ord + 1)
+    # return flour_formatted
+
+    # Second approach
+    # if flour order % n == 0 ==> return flour order
+    # else return flour order + n - flour_ord % n
+    if flour_ord % n != 0:
+        remainder = flour_ord % n
+        diff_from_original_to_round = n - remainder
+        return int(flour_ord + diff_from_original_to_round)
+    return flour_ord
+
 
 
 def decision_choosed(money_from_a,money_from_b):
@@ -133,4 +144,4 @@ def decision_choosed(money_from_a,money_from_b):
     else:
         return "A",money_from_a
 
-# main()
+main()
