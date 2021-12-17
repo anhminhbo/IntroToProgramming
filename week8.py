@@ -2,21 +2,22 @@ def main():
     # # Question 1
     # print(sort_words_string("without,hello,bag,world"))
     #
-    # # Question 2
-    # print(generates_two_dimension_array(3,5))
+    # Question 2
+    list1 = generates_two_dimension_array(3,5)
+    print(str(list1))
 
     # # Question 3
     # generate_list()
 
-    list_of_numbers = [1,2,3,4,5,6,7,8,9,10]
-    # Question 4
-    print(filter_even(list_of_numbers))
-
-    # Question 5
-    print(square_of_even_number(list_of_numbers))
-
-    # Question 6
-    print(generate_square_odd_in_list(list_of_numbers))
+    # list_of_numbers = [1,2,3,4,5,6,7,8,9,10]
+    # # Question 4
+    # print(filter_even(list_of_numbers))
+    #
+    # # Question 5
+    # print(square_of_even_number(list_of_numbers))
+    #
+    # # Question 6
+    # print(generate_square_odd_in_list(list_of_numbers))
 
 #-----------Question 1
 def sort_words_string(input_string):
@@ -54,7 +55,7 @@ def generate_list():
     for number in range(1,21):
         result_list.append(number**2)
 
-    print(result_list[15:20])
+    print(result_list[-1:-6:-1])
 
 #-----------Question 4
 def filter_even(list_number):

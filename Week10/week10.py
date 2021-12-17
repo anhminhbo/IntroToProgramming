@@ -9,7 +9,7 @@ def main():
 def question_1():
     eng_sentence = input("please input an english sentence: ")
     eng_to_pirate = open_and_read_from_file_to_dict("eng2pirate")
-
+    print(eng_to_pirate)
     translated_list_sentence = []
 
     list_sentence = eng_sentence.split()
@@ -38,10 +38,13 @@ def open_and_read_from_file_to_dict(file_name):
             words_list = strip_line.split(sep="\t")
             # print(words_list)
             # Map english words with pirate
-            if len(words_list) == 3:
-                eng_to_pirate[words_list[0].strip()] = words_list[2].strip()
-            else:
-                eng_to_pirate[words_list[0].strip()] = words_list[1].strip()
+            # if len(words_list) == 3:
+            #     eng_to_pirate[words_list[0].strip()] = words_list[2].strip()
+            # else:
+            #     eng_to_pirate[words_list[0].strip()] = words_list[1].strip()
+
+            # Better understanding, the second words always at the last
+            eng_to_pirate[words_list[0].strip()] = words_list[-1].strip()
 
         return  eng_to_pirate
 

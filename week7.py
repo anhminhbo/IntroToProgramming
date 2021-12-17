@@ -6,14 +6,14 @@ def main():
     :return: none
     """
 
-    #Question 2:
-    # multiplication_table(100)
+    # Question 2:
+    # multiplication_table(40)
 
     #Question 3:
     # print_numbers_of_digits(1000)
 
     #Question 4:
-    # print_reverse_string("minhporo")
+    print_reverse_string("minhporo")
 
     #Question 5:
     # print(isPalindrome("Able was I ere I saw Elba"))
@@ -25,11 +25,11 @@ def main():
     # print(removeSpecificSubStringFromString("abc","abcef fegabcasd asdasdasabc"))
 
     #Question 8:
-    randomList = getRandomAlphebeticalCharactersOrders()
-    encryptedString = encrytionOf("MINHPORO",randomList)
-    print(encryptedString)
-    #Question 9
-    print(decryptionOf(encryptedString,randomList))
+    # randomList = getRandomAlphebeticalCharactersOrders()
+    # encryptedString = encrytionOf("MINHPORO",randomList)
+    # print(encryptedString)
+    # #Question 9
+    # print(decryptionOf(encryptedString,randomList))
 
 # Question 1: a) y
 # b) g
